@@ -1,0 +1,60 @@
+:root{
+    --main-color:#293241;
+    --secondary-color:#e0fbfc;
+    --third-color:#3d5a80;
+    --fourth-color:#98c1d9;
+    --accent-color:#ee6c4d;
+}
+body{
+    background-color: var(--main-color);
+    font-family: 'Roboto', sans-serif;
+}
+#homePage{
+    height: 100%;
+    background-image:repeating-linear-gradient(45deg,#ee6c4d,  #ee6c4d 25%, #e0fbfc 25.05%, #e0fbfc 100%);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.navbar-custom{
+    background-color: transparent !important;
+    top: 5px;;
+    position:absolute;
+}
+.nav-link{
+   color: var(--main-color) !important;
+}
+.nav-link:hover{
+    color:var(--accent-color) !important;
+}
+
+
+h1{
+    color: var(--accent-color) ;
+    font-size:3.5rem; 
+    color:#293241;
+}
+.homeBtn{
+
+}
+.phoneImg{
+    max-width: 100%;
+}
+
+#svgWave{
+   position: absolute;
+   bottom:0;
+}
+
+@media only screen and (max-width:992px) {
+    .phoneImg{
+        padding-top:15px;
+        max-width:50%;
+    }
+}
+@media only screen and (max-width:768px) {
+  h1{
+      font-size:3rem
+  }
+
+}
