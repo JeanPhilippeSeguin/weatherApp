@@ -1,7 +1,6 @@
 const ui = new UI();
 const ft = new Fetch();
 
-
 const search = document.getElementById("searchUser");
 const button = document.getElementById("submit");
 button.addEventListener("click", () => {
@@ -10,11 +9,11 @@ button.addEventListener("click", () => {
   ft.getCurrent(currentVal).then((data) => {
     ui.populateUI(data);
     ui.saveToLS(data);
+
+
+  ft.getCurrent2(data).then((data2) =>{
+    ui.populateNewsUi(data2)
+  });
   });
 });
 
-
-window.addEventListener("DOMContentLoaded", () => {
-  const dataSaved = ui.getFromLS();
-  ui.populateUI(dataSaved);
-});

@@ -3,13 +3,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="333753202749-20298s1sjbpf8t61kn2ac74duemo886l.apps.googleusercontent.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="icon" href="assets/icon.svg">
+    <title>News and weather</title>
 </head>
 <body>
     <section id="homePage" class="h-100 w-100 d-flex flex-column justify-content-center">
@@ -34,13 +36,14 @@
                                 <a id="navlinkId2" class="nav-link" href="#weatherPage">Weather</a>
                             </li>
                             <li class="nav-item">
-                                <a id="navlinkId3" class="nav-link" href="#">Daily news </a>
+                                <a id="navlinkId3" class="nav-link" href="#newsContainer">News </a>
                             </li>
                         </ul>
                         <span class="navbar-text">
                             <div id="my-signin2"></div>
                         </span>
                     </div>
+                    <p class="credit">Jean-Philippe Seguin</p>
                 </div>
             </nav>
         <div class="container-fluid">
@@ -49,8 +52,8 @@
                <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start">
                     <h1>Weather App</h1>
                     <p>get your daily news and weather fix</p>
-                    <button type="button" class="btn btn-primary btn-lg homeBtn">Get started</button></div>
-                    <div class="col d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start"><img class="phoneImg" src="phoneImg.svg" alt="illustration">
+                    <a type="button"  href="#weatherPage" class="btn btn-primary btn-lg homeBtn">Get started</a></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start"><img class="phoneImg" src="assets/phoneImg.svg" alt="illustration">
                </div>
            </div>
         </div>
@@ -60,12 +63,12 @@
             
             
     </section>
-    <section id="weatherPage">
+    <section id="weatherPage" class="h-100">
         <div class="container searchContainer">
             <div class="search card card-body">
-                <h1>Get The Weather For a Location</h1>
-                <p class="lead">Enter Your Location</p>
-                <input type="text" id="searchUser" class="form-control" placeholder="Location">
+                <h1>Get the news and weather for any city in the world</h1>
+                <p class="lead">Enter a City</p>
+                <input type="text" id="searchUser" class="form-control" placeholder="e.g. London">
             </div>
             <br>
             <div id="profile"></div>
@@ -76,6 +79,9 @@
         
         <div id="content">
 
+        </div>
+        <div id="newsContainer" class="container-fluid d-flex justify-content-center">
+            
         </div>
     </section>
 <script>
@@ -97,11 +103,12 @@
         });
     }
 </script> <!--google login-->   
+
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
 <script src="fetch.js"></script>
 <script src="ui.js"></script>
 <script src="app.js"></script>
+</body>
 </html>
