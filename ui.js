@@ -31,7 +31,7 @@ class UI {
                 <img class="card-img-top" src="${data2.articles[0].image}" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">${data2.articles[0].title}</h5>
-                <p class="card-text">${data2.articles[0].description.substring(0,200)}</p>
+                <p class="card-text">${data2.articles[0].description.substring(0,150)}</p>
                 <a href="${data2.articles[0].url}" target="#" class="newsSource">${data2.articles[0].source.name}</a>
                 </div>
             </div>
@@ -39,7 +39,7 @@ class UI {
                 <img class="card-img-top" src="${data2.articles[1].image}" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">${data2.articles[1].title}</h5>
-                <p class="card-text">${data2.articles[1].description.substring(0,200)}</p>
+                <p class="card-text">${data2.articles[1].description.substring(0,150)}</p>
                 <a href="${data2.articles[1].url}" target="#" class="newsSource">${data2.articles[1].source.name}</a>
                 </div>
             </div>
@@ -47,7 +47,7 @@ class UI {
                 <img class="card-img-top" src="${data2.articles[2].image}" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">${data2.articles[2].title}</h5>
-                <p class="card-text">${data2.articles[2].description.substring(0,200)}</p>
+                <p class="card-text">${data2.articles[2].description.substring(0,150)}</p>
                 <a href="${data2.articles[2].url}" target="#" class="newsSource">${data2.articles[2].source.name}</a>
                 </div>
             </div>
@@ -55,7 +55,7 @@ class UI {
                 <img class="card-img-top" src="${data2.articles[3].image}" alt="Card image cap">
                 <div class="card-body">
                 <h5 class="card-title">${data2.articles[3].title}</h5>
-                <p class="card-text">${data2.articles[3].description.substring(0,200)}</p>
+                <p class="card-text">${data2.articles[3].description.substring(0,150)}</p>
                 <a href="${data2.articles[3].url}" target="#" class="newsSource">${data2.articles[3].source.name}</a>
                 </div>
             </div>
