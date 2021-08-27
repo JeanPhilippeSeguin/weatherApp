@@ -11,7 +11,8 @@ body{
 }
 .credit{
     font-size:0.75rem;
-    color:var(--third-color)
+    color:var(--third-color);
+    padding-top:0.25rem;
 }
 #homePage{
     height: 100%;

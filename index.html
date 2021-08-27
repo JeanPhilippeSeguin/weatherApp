@@ -51,7 +51,7 @@
                <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start">
                     <h1>Weather App</h1>
                     <p>get your daily news and weather fix</p>
-                    <a type="button"  href="#weatherPage" class="btn btn-primary btn-lg homeBtn">Get started</a></div>
+                    <a href="#weatherPage" class="btn btn-primary btn-lg homeBtn">Get started</a></div>
                     <div class="col d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start"><img class="phoneImg" src="assets/phoneImg.svg" alt="illustration">
                </div>
            </div>
@@ -67,6 +67,7 @@
             <div class="search card card-body">
                 <h1>Get the news and weather for any city in the world</h1>
                 <p class="lead">Enter a City</p>
+                <p class="credit">Jean-Philippe Seguin</p>
                 <input type="text" id="searchUser" class="form-control" placeholder="e.g. London">
             </div>
             <br>
@@ -83,7 +84,6 @@
             
         </div>
     </section>
-    <p class="credit">Jean-Philippe Seguin</p>
 <script>
     function onSuccess(googleUser) {
         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
