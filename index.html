@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="333753202749-20298s1sjbpf8t61kn2ac74duemo886l.apps.googleusercontent.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/icon.svg">
+    <title>News and weather</title>
+</head>
+<body>
+    <section id="homePage" class="h-100 w-100 d-flex flex-column justify-content-center">
+            <nav class="navbar navbar-custom navbar-expand-lg navbar-light bg-light w-100 p-0 m-0">
+                <div class="container-fluid w-100">
+                    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mist" width="80" height="80" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M5 5h3m4 0h9" />
+                        <path d="M3 10h11m4 0h1" />
+                        <path d="M5 15h5m4 0h7" />
+                        <path d="M3 20h9m4 0h3" />
+                      </svg></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a id="navlinkId1" class="nav-link active" aria-current="page" href="#homePage">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="navlinkId2" class="nav-link" href="#weatherPage">Weather</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="navlinkId3" class="nav-link" href="#newsContainer">News </a>
+                            </li>
+                        </ul>
+                        <span class="navbar-text">
+                            <div id="my-signin2"></div>
+                        </span>
+                    </div>
+                    <p class="credit">Jean-Philippe Seguin</p>
+                </div>
+            </nav>
+        <div class="container-fluid">
+           <div class="row d-flex align-items-center">
+               <div class="col-2"></div>
+               <div class="col-12 col-lg-4 d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start">
+                    <h1>Weather App</h1>
+                    <p>get your daily news and weather fix</p>
+                    <a type="button"  href="#weatherPage" class="btn btn-primary btn-lg homeBtn">Get started</a></div>
+                    <div class="col d-flex flex-column justify-content-center align-items-center align-items-lg-start justify-content-lg-start"><img class="phoneImg" src="assets/phoneImg.svg" alt="illustration">
+               </div>
+           </div>
+        </div>
+        <svg id="svgWave" viewBox="0 0 1440 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 2.16944L48 13.7288C96 25.2881 192 48.4067 288 63.7951C384 79.4724 480 86.697 576 86.9137C672 86.697 768 79.4724 864 59.9661C960 40.4597 1056 10.1165 1152 2.16944C1248 -5.77759 1344 10.1165 1392 17.5578L1440 25.2881V164H1392C1344 164 1248 164 1152 164C1056 164 960 164 864 164C768 164 672 164 576 164C480 164 384 164 288 164C192 164 96 164 48 164H0V2.16944Z" fill="#293241"/>
+            </svg>
+            
+            
+    </section>
+    <section id="weatherPage" class="h-100">
+        <div class="container searchContainer">
+            <div class="search card card-body">
+                <h1>Get the news and weather for any city in the world</h1>
+                <p class="lead">Enter a City</p>
+                <input type="text" id="searchUser" class="form-control" placeholder="e.g. London">
+            </div>
+            <br>
+            <div id="profile"></div>
+        </div>
+        <div class="container text-center mt-2">
+            <button class="btn btn-primary" id="submit">Submit</button>
+        </div>
+        
+        <div id="content">
+
+        </div>
+        <div id="newsContainer" class="container-fluid d-flex justify-content-center">
+            
+        </div>
+    </section>
+<script>
+    function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+        console.log(error);
+    }
+    function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+    }
+</script> <!--google login-->   
+
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="fetch.js"></script>
+<script src="ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
